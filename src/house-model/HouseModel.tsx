@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 
-export function Box(props: ThreeElements['mesh']) {
+export function HouseModel(props: ThreeElements['mesh']) {
     const ref = useRef<THREE.Mesh>(null!)
     const [hovered, hover] = useState(false)
     const [clicked, click] = useState(false)
