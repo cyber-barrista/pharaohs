@@ -1,8 +1,10 @@
 import { match } from "ts-pattern"
 
-export type HouseModel = 'model-e' | 'model-g' | 'model-y' | 'model-p'
+export const houseModelTypes = ['model-e', 'model-g', 'model-y', 'model-p'] as const;
 
-export function toName(model: HouseModel): string {
+export type HouseModelType = typeof houseModelTypes[number];
+
+export function toName(model: HouseModelType): string {
     return match(model)
         .with('model-e', () => "Model E")
         .with('model-g', () => "Model G")

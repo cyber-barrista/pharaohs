@@ -3,22 +3,11 @@ import './App.css'
 import { Navigator } from '../navigator/Navigator'
 import { Background } from '../background/Background'
 import { AppStateProvider } from '../state/AppState'
-import { CSSReset, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
-const customTheme = extendTheme({
-  styles: {
-    global: {
-      body: {
-        bg: "inherit",
-      },
-    },
-  },
-});
-
 const CustomChakraProvider: FC<{ children: ReactNode }> = ({ children }) => (
-  <ChakraProvider theme={customTheme}>
-    <CSSReset />
+  <ChakraProvider>
     <Global
       styles={{
         body: {

@@ -1,7 +1,7 @@
 import { Flex, Button, Stack, Spacer } from "@chakra-ui/react";
 import { FC, useContext } from "react";
 import { AppStateContext } from "../state/AppState";
-import { HouseModel, toName } from "../house-model/types";
+import { HouseModelType, toName } from "../house-model/types";
 
 export function Navigator() {
     return (
@@ -20,7 +20,7 @@ export function Navigator() {
 
 
 type HouseModelButtonProps = {
-    houseModel: HouseModel
+    houseModel: HouseModelType
 }
 
 const HouseModelButton: FC<HouseModelButtonProps> = props => {
@@ -28,7 +28,7 @@ const HouseModelButton: FC<HouseModelButtonProps> = props => {
 
     const buttonText = toName(props.houseModel)
     const variant = state.currentHouseModel === props.houseModel ? "outline" : "solid" as const
-    const onClick = () => setState({ currentHouseModel: props.houseModel })
+    const onClick = () => setState({ ...state, ...{ currentHouseModel: props.houseModel } })
 
     return <Button colorScheme='purple' variant={variant} onClick={onClick}>{buttonText}</Button>
 }

@@ -1,13 +1,14 @@
 import React, { Dispatch, ReactNode, SetStateAction, createContext, useState } from 'react';
-import { HouseModel } from '../house-model/types';
+import { HouseModelType } from '../house-model/types';
+
 
 
 export type AppState = {
-    currentHouseModel: HouseModel
+    currentHouseModel: HouseModelType,
 }
 
-const defaultAppState: AppState = {
-    currentHouseModel: 'model-e'
+export const defaultAppState: AppState = {
+    currentHouseModel: 'model-e',
 }
 
 export type AppStateAccessors = {
