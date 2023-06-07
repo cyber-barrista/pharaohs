@@ -1,4 +1,4 @@
-dist
+# dist to deploy it on github
 dist-ssr
 *.local
 
@@ -137,7 +137,7 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist to deploy it on github
 
 # Storybook build outputs
 .out
@@ -145,7 +145,7 @@ dist
 storybook-static
 
 # rollup.js default build output
-dist/
+# dist/ to deploy it on github
 
 # Gatsby files
 .cache/
@@ -262,6 +262,9 @@ temp/
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+### Jet Brains stuff
+.idea
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
